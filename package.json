@@ -8,7 +8,6 @@
     "dev": "concurrently \"npm run run-be\" \"npm run run-fe\"",
     "run-be": "cd last_typescr_bdz/backend && npm run dev",
     "run-fe": "cd last_typescr_bdz/frontend && npm run dev"
-
   },
   "keywords": [],
   "author": "",
