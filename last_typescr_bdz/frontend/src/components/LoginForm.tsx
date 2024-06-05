@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './LoginForm.css';
 
 const LoginForm: React.FC = () => {
     const [username, setUsername] = useState('');
@@ -16,8 +17,9 @@ const LoginForm: React.FC = () => {
     };
 
     return (
+    <div className="loginForm">
+        <h2>Login</h2>
         <form onSubmit={handleSubmit}>
-            <h2>Login</h2>
             <div>
                 <label>Username:</label>
                 <input
@@ -47,6 +49,7 @@ const LoginForm: React.FC = () => {
             </div>
             <button type="submit">Login</button>
         </form>
+    </div>
     );
 };
 

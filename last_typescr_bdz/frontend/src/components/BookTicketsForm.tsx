@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './BookTicketsForm.css';
 
 interface BookTicketsFormProps {
     onSearch: (from: string, to: string, departureDate: string, travelClass: string, adults: number, children: number) => void;
@@ -18,11 +19,12 @@ const BookTicketsForm: React.FC<BookTicketsFormProps> = ({ onSearch }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+
+        <form onSubmit={handleSubmit} className="frame">
             <h2>Book Your Train Tickets Now</h2>
             <div>
                 <label>From:</label>
-                <input type="text" value={from} readOnly />
+                <input type="text" value={from} readOnly/>
             </div>
             <div>
                 <label>To:</label>

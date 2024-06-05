@@ -1,5 +1,5 @@
 import React from 'react';
-import backgroundImage from '/last_typescr_bdz/frontend/src/assets/main_bkgd_train.jpeg';
+import backgroundImage from '../assets/main_bkgd_train.jpeg';
 
 const BackgroundImage: React.FC = () => {
     return (
@@ -16,7 +16,7 @@ const BackgroundImage: React.FC = () => {
                 height: '100%',
                 zIndex: -1,
             }}
-        ></div>
+        />
     );
 };
 

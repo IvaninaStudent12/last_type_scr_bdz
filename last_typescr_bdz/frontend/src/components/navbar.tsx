@@ -9,17 +9,19 @@ const NavBar: React.FC = () => {
     return (
         <nav className="navbar">
             <div className="navbar-logo">
+                <Link to = "/Home" className="navbarlinks">
                 <img src={logo} alt="Train Logo" />
-                <span>БДЖ</span>
+                <span className="title">БДЖ</span>
+                </Link>
             </div>
-            <div className="navbar-links">
+            <div className="login">
                 {username ? (
                     <>
                         <span>Welcome, {username}</span>
                         <Link to="/my-tickets">My Tickets</Link>
                     </>
                 ) : (
-                    <Link to="/login">Login</Link>
+                    <Link to="/login" className="login-link">Login</Link>
                 )}
             </div>
         </nav>

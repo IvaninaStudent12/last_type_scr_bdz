@@ -1,4 +1,5 @@
 import React from 'react';
+import './BookTicketsForm.css'
 
 interface Ticket {
     name: string;
@@ -19,7 +20,9 @@ interface BookedTicketProps {
 
 const BookedTicket: React.FC<BookedTicketProps> = ({ ticket }) => {
     return (
-        <div>
+        <div
+
+        >
             <h2>Booked Ticket</h2>
             <h3>Ticket's info</h3>
             <table>
