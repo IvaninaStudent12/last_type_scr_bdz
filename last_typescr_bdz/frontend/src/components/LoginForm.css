@@ -1,17 +1,54 @@
-
-/* Рамка - bkgd*/
-.loginForm
-{
-    position: relative;
-    z-index: 1;
+/* LoginForm.css */
+.loginForm {
+    background-color: white; /* White background */
     padding: 20px;
-    border: 2px solid white;
-    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: auto; /* Adjust width as needed */
+    margin: 0; /* Center the form horizontally */
 }
 
-/* Задаване на стилове за текстовите полета на страницата*/
-.loginForm h2, label
-{
-    color: white;
-    text-decoration: none;
+.loginForm h2 {
+    color: black; /* Black text for the label */
+    margin-bottom: 30px;
+    font-size: 2rem;
+    text-align: center;
 }
+
+.loginForm form {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange elements vertically */
+    gap: 15px; /* Add spacing between elements */
+}
+
+.loginForm label {
+    width: 120px;
+    margin-right: 10px;
+    color: black;
+}
+
+.loginForm input[type="text"],
+.loginForm input[type="email"],
+.loginForm input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #bbb; /* Light gray border */
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.loginForm button {
+    background-color: #007bff; /* Blue background */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%; /* Make button full width */
+}
+
+.loginForm button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+

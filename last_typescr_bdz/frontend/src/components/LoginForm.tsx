@@ -1,20 +1,24 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LoginForm.css';
+import { useUser } from './UserContext';
 
 const LoginForm: React.FC = () => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
     const navigate = useNavigate();
+    const { setUsername: setContextUsername } = useUser();
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         sessionStorage.setItem('username', username);
         sessionStorage.setItem('email', email);
         sessionStorage.setItem('phone', phone);
+        setContextUsername(username);
         navigate('/book-tickets');
     };
+
 
     return (
     <div className="loginForm">

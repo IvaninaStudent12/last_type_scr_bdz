@@ -1,4 +1,5 @@
 import React from 'react';
+import './Ticket.css';
 
 const Ticket: React.FC = () => {
     const name = sessionStorage.getItem('username');
@@ -13,7 +14,7 @@ const Ticket: React.FC = () => {
     const arrivalTime = '12:00';
 
     return (
-        <div>
+        <div className="frame">
             <h2>Booked Ticket</h2>
             <h3>Ticket's info</h3>
             <table>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import "./TrainSchedule.css"
 
 interface Train {
     trainNumber: string;
@@ -23,7 +24,7 @@ const TrainSchedule: React.FC = () => {
     };
 
     return (
-        <div>
+        <div className="frame">
             <h2>Available Trains Schedule</h2>
             <table>
                 <thead>

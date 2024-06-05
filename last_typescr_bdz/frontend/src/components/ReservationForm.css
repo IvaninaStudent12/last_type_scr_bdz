@@ -1,0 +1,44 @@
+.frame
+{
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    border: 2px solid white;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.frame h2, label
+{
+    color: white;
+    text-decoration: none;
+}
+
+/* ReservationForm.css */
+.loginForm fieldset {
+    display: flex;          /* Използваме flexbox */
+    flex-direction: column; /* Подреждаме елементите вертикално */
+    gap: 15px; /* Разстояние между елементите */
+
+}
+
+.loginForm .form-row {   /* Нов клас за редовете с етикет и поле */
+    display: flex;
+    align-items: center;   /* Вертикално подравняване */
+}
+
+.loginForm label {
+    /* Съществуващите стилове */
+    width: 120px;         /* Фиксирана ширина за етикетите */
+    margin-right: 10px;   /* Разстояние между етикет и поле */
+}
+
+.loginForm input,
+.loginForm select {
+    width: 100%; /* Полетата за въвеждане да заемат цялата налична ширина */
+    box-sizing: border-box; /* Включваме padding и border в изчислението на ширината */
+}
+
+.loginForm legend {
+    /* ... (съществуващите стилове) ... */
+    color: black; /* Светло сив цвят */
+}
