@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, {useState} from 'react';
+import {useNavigate} from 'react-router-dom';
 import './ReservationForm.css';
+
 
 const ReservationForm: React.FC = () => {
     const [to, setTo] = useState('');
