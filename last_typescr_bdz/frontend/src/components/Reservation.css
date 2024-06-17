@@ -1,0 +1,65 @@
+.reservation-container
+{
+    background-color: whitesmoke;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: auto;
+    margin: 0;
+}
+
+.reservation-container h2
+{
+    color: black;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.reservation-container h3
+{
+    color: black;
+    margin-bottom: 10px;
+}
+
+.reservation-container table
+{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.reservation-container th, td
+{
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+
+}
+
+.reservation-container th
+{
+    background-color: #616161;
+    color: white;
+}
+
+.buttons-container
+{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.buttons-container button
+{
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #225564;
+    color: white;
+    border: none;
+    width: 170px;
+}
+
+.buttons-container button:hover
+{
+    background-color: #47798C;
+
+}

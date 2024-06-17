@@ -1,4 +1,4 @@
-.frame
+.schedule-frame
 {
     position: relative;
     z-index: 1;
@@ -7,51 +7,60 @@
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.frame h2, label
+.schedule-frame h2, label
 {
     color: white;
     text-decoration: none;
 }
 
-.frame {
-    background-color: white; /* Set background to white */
+.schedule-frame
+{
+    background-color: white;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: add a subtle shadow */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.frame h2 {
-    color: black; /* Set label color to black */
-    text-align: center; /* Center the label */
-    margin-bottom: 15px;
+.schedule-frame h2
+{
+    color: black;
+    text-align: center;
+    margin-bottom: 28px;
 }
 
-/* Table styling */
-.frame table {
+
+.schedule-frame table
+{
     width: 100%;
-    border-collapse: collapse; /* Remove extra space between cells */
+    border-collapse: collapse;
 }
 
-.frame th, .frame td {
-    border: 1px solid #ddd; /* Add a light gray border */
+.schedule-frame th, td
+{
+    border: 1px solid #ddd;
     padding: 10px;
     text-align: left;
 }
 
-.frame th {
-    background-color: #f2f2f2; /* Light gray background for headers */
+.schedule-frame th
+{
+    background-color: #616161;
+    color: white;
 }
 
-/* Optional: Style the "BOOK IT" button */
-.frame button {
-    background-color: #007bff; /* Blue background */
+
+.schedule-frame button
+{
+    background-color: #225564;
     color: white;
     border: none;
     padding: 8px 15px;
     border-radius: 5px;
     cursor: pointer;
+    width: 100%;
 }
 
-.frame button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+.schedule-frame button:hover
+{
+    background-color: #47798C;
 }

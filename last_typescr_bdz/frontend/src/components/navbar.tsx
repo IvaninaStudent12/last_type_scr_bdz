@@ -19,7 +19,7 @@ const NavBar: React.FC = () => {
                 {username ? (
                     <>
                         <span>Welcome, {username}</span>
-                        <Link to="/my-tickets">My Tickets</Link>
+                        <Link to="/reservation" className="login-link">My Tickets</Link>
                     </>
                 ) : (
                     <Link to="/login" className="login-link">Login</Link>

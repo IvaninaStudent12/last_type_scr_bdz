@@ -1,18 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import "./TrainSchedule.css";
-import dayjs from "dayjs";
-
-/*НАПРАВЕНА ВРЪЗКА ОТ BACKEND КЪМ FRONTEND - от МАРИЯ*/
-/*ДА НЕ СЕ ПРОМЕНЯ НИЩО ПО ТОЗИ ФАЙЛ - оставила съм в коментар стария код ако нещо ви трябва*/
+// import dayjs from "dayjs";
 
 interface TrainSchedule {
-    id_train_schedule: string,
-    schedule_train_num: string,
-    schedule_departure_date: Date,
-    schedule_departure_time: string,
-    schedule_arrival_time: string,
-    cost: number,
+    id_train_schedule: string;
+    schedule_train_num: string;
+   /* schedule_departure_date: Date; */
+    schedule_departure_time: string;
+    schedule_arrival_time: string;
+    cost: number;
 }
 
 const TrainSchedule: React.FC = () => {
@@ -37,26 +34,27 @@ const TrainSchedule: React.FC = () => {
             });
     }, []);
 
+    // const formatDate = (date: Date) => {
+    //     return dayjs(date).format('DD.MM.YYYY');
+    // };
 
-
-    const formatDate = (date: Date) => {
-        return dayjs(date).format('DD.MM.YYYY')
-    };
-
-    const handleBook = (schedule_train_num: string) => {
-        sessionStorage.setItem('schedule_train_num', schedule_train_num);
-        navigate('/ticket');
+    const handleBook = (train: TrainSchedule) => {
+        sessionStorage.setItem('schedule_train_num', train.schedule_train_num);
+        sessionStorage.setItem('departure_time', train.schedule_departure_time);
+        sessionStorage.setItem('arrival_time', train.schedule_arrival_time);
+        sessionStorage.setItem('cost', train.cost.toString());
+        navigate('/reservation');
     };
 
     return (
-        <div className="frame">
+        <div className="schedule-frame">
             <h2>Available Trains Schedule</h2>
             {error && <p className="error-message">{error}</p>}
             <table>
                 <thead>
                 <tr>
                     <th>Train №</th>
-                    <th>Departure Date</th>
+                    {/*<th>Departure Date</th> */}
                     <th>Departure Time</th>
                     <th>Arrival Time</th>
                     <th>Cost</th>
@@ -64,15 +62,15 @@ const TrainSchedule: React.FC = () => {
                 </tr>
                 </thead>
                 <tbody>
-                {trainSchedule.map((trainSchedule) => (
-                    <tr key={trainSchedule.id_train_schedule}>
-                        <td>{trainSchedule.schedule_train_num}</td>
-                        <td>{formatDate(trainSchedule.schedule_departure_date)}</td>
-                        <td>{trainSchedule.schedule_departure_time}</td>
-                        <td>{trainSchedule.schedule_arrival_time}</td>
-                        <td>{trainSchedule.cost}</td>
+                {trainSchedule.map((train) => (
+                    <tr key={train.id_train_schedule}>
+                        <td>{train.schedule_train_num}</td>
+                        {/*<td>{formatDate(train.schedule_departure_date)}</td>*/}
+                        <td>{train.schedule_departure_time}</td>
+                        <td>{train.schedule_arrival_time}</td>
+                        <td>{train.cost}</td>
                         <td>
-                            <button onClick={() => handleBook(trainSchedule.schedule_train_num)}>BOOK IT</button>
+                            <button onClick={() => handleBook(train)}>BOOK IT</button>
                         </td>
                     </tr>
                 ))}
@@ -83,63 +81,3 @@ const TrainSchedule: React.FC = () => {
 };
 
 export default TrainSchedule;
-
-
-/*import React from 'react';
-import { useNavigate } from 'react-router-dom';
-
-interface Train {
-    trainNumber: string;
-    departureDate: string;
-    departureTime: string;
-    arrivalTime: string;
-    cost: number;
-}
-
-const TrainSchedule: React.FC = () => {
-    const navigate = useNavigate();
-
-    const trains: Train[] = [
-        { trainNumber: '123', departureDate: '2024-06-05', departureTime: '08:00', arrivalTime: '12:00', cost: 35 },
-        { trainNumber: '456', departureDate: '2024-06-05', departureTime: '14:00', arrivalTime: '18:00', cost: 35 },
-    ];
-
-    const handleBook = (trainNumber: string) => {
-        sessionStorage.setItem('trainNumber', trainNumber);
-        navigate('/ticket');
-    };
-
-    return (
-        <div>
-            <h2>Available Trains Schedule</h2>
-            <table>
-                <thead>
-                <tr>
-                    <th>Train №</th>
-                    <th>Departure Date</th>
-                    <th>Departure Time</th>
-                    <th>Arrival Time</th>
-                    <th>Cost</th>
-                    <th></th>
-                </tr>
-                </thead>
-                <tbody>
-                {trains.map((train) => (
-                    <tr key={train.trainNumber}>
-                        <td>{train.trainNumber}</td>
-                        <td>{train.departureDate}</td>
-                        <td>{train.departureTime}</td>
-                        <td>{train.arrivalTime}</td>
-                        <td>{train.cost}</td>
-                        <td>
-                            <button onClick={() => handleBook(train.trainNumber)}>BOOK IT</button>
-                        </td>
-                    </tr>
-                ))}
-                </tbody>
-            </table>
-        </div>
-    );
-};
-
-export default TrainSchedule;*/

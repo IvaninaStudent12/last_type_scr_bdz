@@ -22,10 +22,11 @@ const LoginForm: React.FC = () => {
 
     return (
     <div className="loginForm">
-        <h2>Login</h2>
+        <h2><i>Здравейте, за да продължите с разглеждането и запазването на билети за влак, попълнете следните данни, необходими за запазването на билета Ви!</i></h2>
+        <h2>Благодарим предварително!</h2>
         <form onSubmit={handleSubmit}>
             <div>
-                <label>Username:</label>
+                <label>Username</label>
                 <input
                     type="text"
                     value={username}
@@ -34,7 +35,7 @@ const LoginForm: React.FC = () => {
                 />
             </div>
             <div>
-                <label>Email:</label>
+                <label>Email</label>
                 <input
                     type="email"
                     value={email}
@@ -43,7 +44,7 @@ const LoginForm: React.FC = () => {
                 />
             </div>
             <div>
-                <label>Phone:</label>
+                <label>Phone</label>
                 <input
                     type="tel"
                     value={phone}

@@ -1,4 +1,4 @@
-.loginForm
+.personalInfo-form
 {
     background-color: white;
     padding: 20px;
@@ -8,30 +8,29 @@
     margin: 0;
 }
 
-.loginForm h2
+.personalInfo-form h2
 {
     color: black;
     margin-bottom: 28px;
-    font-size: 1rem;
+    font-size: 1.2rem;
     text-align: center;
 }
 
-
-.loginForm form
+.personalInfo-form form
 {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-.loginForm label
+.personalInfo-form label
 {
     width: 120px;
     margin-right: 10px;
     color: black;
 }
 
-.loginForm input
+.personalInfo-form input
 {
     width: 100%;
     padding: 10px;
@@ -40,8 +39,7 @@
     box-sizing: border-box;
 }
 
-
-.loginForm button
+.personalInfo-form button
 {
     background-color: #225564;
     color: white;
@@ -50,12 +48,10 @@
     border-radius: 5px;
     cursor: pointer;
     width: 100%;
+    font-size: 1rem;
 }
 
-.loginForm button:hover
+.personalInfo-form button:hover
 {
     background-color: #47798C;
 }
-
-
-
