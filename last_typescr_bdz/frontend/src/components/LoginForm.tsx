@@ -1,27 +1,32 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LoginForm.css';
+import { useUser } from './UserContext';
 
 const LoginForm: React.FC = () => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
     const navigate = useNavigate();
+    const { setUsername: setContextUsername } = useUser();
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         sessionStorage.setItem('username', username);
         sessionStorage.setItem('email', email);
         sessionStorage.setItem('phone', phone);
+        setContextUsername(username);
         navigate('/book-tickets');
     };
 
+
     return (
     <div className="loginForm">
-        <h2>Login</h2>
+        <h2><i>Здравейте, за да продължите с разглеждането и запазването на билети за влак, попълнете следните данни, необходими за запазването на билета Ви!</i></h2>
+        <h2>Благодарим предварително!</h2>
         <form onSubmit={handleSubmit}>
             <div>
-                <label>Username:</label>
+                <label>Username</label>
                 <input
                     type="text"
                     value={username}
@@ -30,7 +35,7 @@ const LoginForm: React.FC = () => {
                 />
             </div>
             <div>
-                <label>Email:</label>
+                <label>Email</label>
                 <input
                     type="email"
                     value={email}
@@ -39,7 +44,7 @@ const LoginForm: React.FC = () => {
                 />
             </div>
             <div>
-                <label>Phone:</label>
+                <label>Phone</label>
                 <input
                     type="tel"
                     value={phone}

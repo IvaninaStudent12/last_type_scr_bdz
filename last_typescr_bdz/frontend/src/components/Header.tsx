@@ -1,5 +1,5 @@
 import React from 'react';
-import './navbar.css';  // Добавяме CSS за навигационната лента
+import './navbar.css';
 
 interface HeaderProps {
     user: string | null;

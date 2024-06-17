@@ -2,9 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './navbar.css';
 import logo from '../assets/train_transp_logo.png';
+import { useUser } from './UserContext';
 
 const NavBar: React.FC = () => {
-    const username = sessionStorage.getItem('username');
+    const { username } = useUser();
 
     return (
         <nav className="navbar">
@@ -18,7 +19,7 @@ const NavBar: React.FC = () => {
                 {username ? (
                     <>
                         <span>Welcome, {username}</span>
-                        <Link to="/my-tickets">My Tickets</Link>
+                        <Link to="/reservation" className="login-link">My Tickets</Link>
                     </>
                 ) : (
                     <Link to="/login" className="login-link">Login</Link>

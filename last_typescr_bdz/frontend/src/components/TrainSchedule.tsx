@@ -1,35 +1,60 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import "./TrainSchedule.css";
+// import dayjs from "dayjs";
 
-interface Train {
-    trainNumber: string;
-    departureDate: string;
-    departureTime: string;
-    arrivalTime: string;
+interface TrainSchedule {
+    id_train_schedule: string;
+    schedule_train_num: string;
+   /* schedule_departure_date: Date; */
+    schedule_departure_time: string;
+    schedule_arrival_time: string;
     cost: number;
 }
 
 const TrainSchedule: React.FC = () => {
     const navigate = useNavigate();
+    const [trainSchedule, setTrainSchedule] = useState<TrainSchedule[]>([]);
+    const [error] = useState<string | null>(null);
 
-    const trains: Train[] = [
-        { trainNumber: '123', departureDate: '2024-06-05', departureTime: '08:00', arrivalTime: '12:00', cost: 35 },
-        { trainNumber: '456', departureDate: '2024-06-05', departureTime: '14:00', arrivalTime: '18:00', cost: 35 },
-    ];
+    useEffect(() => {
+        const getTrainSchedule = async () => {
+            const response = await fetch("http://localhost:3004/api/train_schedule");
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const data: TrainSchedule[] = await response.json();
+            console.log(data);
+            setTrainSchedule(data);
+        };
 
-    const handleBook = (trainNumber: string) => {
-        sessionStorage.setItem('trainNumber', trainNumber);
-        navigate('/ticket');
+        getTrainSchedule()
+            .catch(error => {
+                console.error("Failed to fetch train schedule:", error);
+            });
+    }, []);
+
+    // const formatDate = (date: Date) => {
+    //     return dayjs(date).format('DD.MM.YYYY');
+    // };
+
+    const handleBook = (train: TrainSchedule) => {
+        sessionStorage.setItem('schedule_train_num', train.schedule_train_num);
+        sessionStorage.setItem('departure_time', train.schedule_departure_time);
+        sessionStorage.setItem('arrival_time', train.schedule_arrival_time);
+        sessionStorage.setItem('cost', train.cost.toString());
+        navigate('/reservation');
     };
 
     return (
-        <div>
+        <div className="schedule-frame">
             <h2>Available Trains Schedule</h2>
+            {error && <p className="error-message">{error}</p>}
             <table>
                 <thead>
                 <tr>
                     <th>Train №</th>
-                    <th>Departure Date</th>
+                    {/*<th>Departure Date</th> */}
                     <th>Departure Time</th>
                     <th>Arrival Time</th>
                     <th>Cost</th>
@@ -37,15 +62,15 @@ const TrainSchedule: React.FC = () => {
                 </tr>
                 </thead>
                 <tbody>
-                {trains.map((train) => (
-                    <tr key={train.trainNumber}>
-                        <td>{train.trainNumber}</td>
-                        <td>{train.departureDate}</td>
-                        <td>{train.departureTime}</td>
-                        <td>{train.arrivalTime}</td>
+                {trainSchedule.map((train) => (
+                    <tr key={train.id_train_schedule}>
+                        <td>{train.schedule_train_num}</td>
+                        {/*<td>{formatDate(train.schedule_departure_date)}</td>*/}
+                        <td>{train.schedule_departure_time}</td>
+                        <td>{train.schedule_arrival_time}</td>
                         <td>{train.cost}</td>
                         <td>
-                            <button onClick={() => handleBook(train.trainNumber)}>BOOK IT</button>
+                            <button onClick={() => handleBook(train)}>BOOK IT</button>
                         </td>
                     </tr>
                 ))}

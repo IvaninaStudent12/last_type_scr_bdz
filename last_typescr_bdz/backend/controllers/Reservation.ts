@@ -1,9 +1,13 @@
 export interface Reservation {
     id_reservations: number,
-    id_train_schedule: string,
-    date_of_travelling: Date,
-    first_name: string,
-    last_name: string,
+    name: string,
+    phone: string,
+    train_from: string,
+    train_to: string,
+    travel_class: string,
+    adults: number,
+    train_num: string,
+    departure_date: Date,
+    departure_time: string,
+    arrival_time: string
 }
-
-/*Експортиране на интерфейс Users, където да се запазят данните на всеки потребител, който си резервира билет*/

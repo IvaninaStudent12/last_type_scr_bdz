@@ -1,0 +1,66 @@
+.schedule-frame
+{
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    border: 2px solid white;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.schedule-frame h2, label
+{
+    color: white;
+    text-decoration: none;
+}
+
+.schedule-frame
+{
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-frame h2
+{
+    color: black;
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+
+.schedule-frame table
+{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.schedule-frame th, td
+{
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.schedule-frame th
+{
+    background-color: #616161;
+    color: white;
+}
+
+
+.schedule-frame button
+{
+    background-color: #225564;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.schedule-frame button:hover
+{
+    background-color: #47798C;
+}

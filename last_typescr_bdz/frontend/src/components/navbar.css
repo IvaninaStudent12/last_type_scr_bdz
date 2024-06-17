@@ -1,4 +1,5 @@
-.navbar {
+.navbar
+{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -7,25 +8,29 @@
     padding: 10px;
 }
 
-.navbar-logo img {
+.navbar-logo img
+{
     height: 40px;
     margin-right: 10px;
 }
 
-.navbarlinks {
+.navbarlinks
+{
     color: white;
     text-decoration: none;
     margin-left: 20px;
     align-items: center;
 }
 
-.navbarlinks a {
+.navbarlinks a
+{
     color: white;
     text-decoration: none;
     margin-left: 20px;
 }
 
-.title {
+.title
+{
     display: flex;
     color: white;
     text-decoration: none;
@@ -33,25 +38,29 @@
     align-items: center;
 }
 
-.title a {
+.title a
+{
     color: white;
     text-decoration: none;
     margin-left: 20px;
 }
 
-.login {
+.login
+{
     color: white;
     text-decoration: none;
     margin-left: 20px;
 }
 
-.login a {
+.login a
+{
     color: white;
     text-decoration: none;
     margin-left: 20px;
 }
 
-.login-link {
+.login-link
+{
     background-color: #333;
     color: white;
     padding: 10px 20px;
@@ -59,9 +68,9 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
     text-decoration: none;
-
 }
 
-.login-link:hover {
+.login-link:hover
+{
     background-color: #555;
 }

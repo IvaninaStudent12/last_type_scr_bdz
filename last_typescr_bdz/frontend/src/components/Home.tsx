@@ -1,9 +1,10 @@
 import React from 'react';
+import './LoginForm.css'
 
 export const Home: React.FC = () => {
     return (
-        <div>
-            <h2>Здравейте, това е уеб страница за запазване на билети за влак!</h2>
+        <div className="loginForm">
+            <h3>Здравейте, това е уеб страница за запазване на билети за влак!</h3>
             <h3>Всеки от нас имаше равно разпределени задачи като:</h3>
             <h3>Frontend: Иванина и Максим</h3>
             <h3>Backend: Мария</h3>
